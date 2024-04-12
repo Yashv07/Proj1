@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedure</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='basic.css') }}">
+  <link rel="stylesheet" href="file:///Users/yashvasukar/Desktop/Project/static/basic.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="information.html">Information</a>
+      <a href="datasets.html">Data Sets</a>
+      <a href="procedure.html">Procedure</a>
+    </div>
+    <div class="procedure-content">
+      <h1>Procedure</h1>
+      <h2> Model Creation </h2>
+      <p>Below are the steps to follow:</p>
+      <ul>
+        <li>Step 1:
+       <b> Data Acquisition: </b> <p>
+
+<u><i> Data Preprocessing: </i> </u> 
+
+The initial phase of our data processing pipeline involves meticulous cleaning of the dataset to eradicate any inconsistencies, ensuring data integrity and reliability. This comprehensive cleaning process is crucial for preparing a high-quality dataset for subsequent analysis and model development. Inconsistencies such as missing values, duplicate entries, and formatting errors are addressed to create a standardized dataset ready for tokenization. By ensuring the dataset's cleanliness, we lay the foundation for accurate and reliable analysis of SQL queries in IoT databases.
+
+<p>
+<u><i> Feature Extraction: </i> </u>
+
+Semantic features are extracted from the tokenized queries, focusing on key elements such as identifiers, keywords, operators, and special characters. By extracting semantic features, the system gains a deeper understanding of the underlying structure and meaning of each query statement. This semantic analysis goes beyond traditional token-based methods, allowing our system to capture the nuances and complexities of SQL queries in IoT databases. Through feature extraction, we transform raw query data into meaningful representations that capture the essential characteristics of each query, facilitating accurate detection of SQL injection attacks.
+
+
+<p>
+<u><i> Utilization of CBOW - Word2Vec: </i> </u>
+  
+  Word2Vec emerges as a pivotal tool for efficient tokenization, streamlining the process of feature extraction. Word2Vec facilitates the extraction of meaningful features from query statements, enhancing the system's ability to capture essential information from the data. By utilizing the Continuous Bag of Words (CBOW) approach, Word2Vec generates word embeddings that represent the contextual relationships between words in the dataset. These word embeddings encode semantic similarities and associations, enabling our system to understand the underlying semantics of SQL queries more effectively. Through the utilization of Word2Vec, we enhance the accuracy and reliability of our feature extraction process, ultimately improving the performance of our SQL injection detection system in IoT databases.
+ </li>
+        <li>Step 2: 
+<b> Semantic Feature Extraction: </b> <p>
+
+<p>
+<u><i> Categorization of Queries: </i> </u>
+
+Each query within the dataset undergoes systematic categorization into one of two classes: normal traffic or malicious traffic. This categorization process is pivotal for distinguishing between benign queries that pose no security threat and potentially harmful queries that may indicate SQL injection attacks. By categorizing queries based on their traffic type, our system can focus its analysis and detection efforts more effectively, ensuring prompt identification and response to security threats.
+
+<p>
+<u><i> Focus on Semantic Content: </i> </u>
+
+Semantic features play a crucial role in the classification process, encompassing identifiers, keywords, operators, and special characters within SQL queries. Unlike traditional syntax-based methods that primarily focus on the structural elements of queries, our approach prioritizes semantic content. By delving deeper into the underlying meaning and intent behind each query statement, our system can better discern between legitimate queries and those that exhibit suspicious or malicious behavior. This semantic analysis allows our system to identify subtle deviations from expected query patterns, enhancing its ability to detect SQL injection attacks with greater accuracy and reliability.
+
+<p>
+<u><i> Identification of Malicious Expressions: </i> </u>
+
+Malicious expressions often exhibit tautological structures, characterized by redundant or self-referential expressions. These expressions are commonly employed by attackers to manipulate query behavior and exploit vulnerabilities in database systems. Unlike traditional syntax-focused methods, our approach places greater emphasis on identifying these semantic anomalies. By analyzing the semantic content of queries, our system can detect suspicious patterns indicative of SQL injection attacks, such as expressions that compare a value to itself or contain unexpected characters. This proactive approach to semantic analysis enables our system to stay one step ahead of attackers, mitigating potential threats before they can inflict harm on IoT databases and systems.
+</li>
+        <li>Step 3: 
+<b> Data Re-sampling Techniques: </b> <p>
+
+<p>
+<u><i> Leveraging Feature Extraction Techniques: </i> </u>
+
+Feature extraction techniques, such as Word2Vec, are harnessed to unlock latent and semantic features embedded within the dataset. Word2Vec, a popular algorithm in natural language processing (NLP), converts words or phrases into high-dimensional vectors, capturing semantic similarities between terms. By applying Word2Vec to the dataset, our system gains a deeper understanding of the underlying context and meaning of query statements. This enables the system to extract intricate patterns and relationships present in the data, enhancing its overall understanding and predictive capabilities. Leveraging advanced feature extraction techniques empowers our system to uncover nuanced insights and detect subtle anomalies that may indicate SQL injection attacks or other security threats.
+
+<p>
+<u><i> Addressing Imbalanced Data Challenges: </i> </u>
+
+The project confronts the challenge of training on imbalanced data, wherein one class (e.g., normal traffic) significantly outweighs the other (e.g., malicious traffic). Imbalanced data poses a risk of biased model predictions and erroneous results, as models may prioritize the majority class and overlook minority class instances. To mitigate this issue, two resampling approaches are implemented: up-sampling and random sampling. Up-sampling involves randomly duplicating instances from the minority class to match the size of the majority class, ensuring a balanced distribution of classes within the dataset. 
+On the other hand, random sampling involves randomly selecting instances from the majority class and removing excess samples to achieve a balanced distribution. By applying these resampling methodologies, our system rectifies class imbalances within the dataset, ensuring fair representation and more accurate model training. This approach enhances the system's ability to detect SQL injection attacks and other security threats across diverse datasets, improving overall performance and reliability.
+</li>
+        <li>Step 4: <b> Feature Selection: </b> <p>
+
+<p>
+<u><i> Addressing Trade-offs in Re-sampling Techniques: </i> </u>
+
+While re-sampling techniques effectively mitigate data-imbalance issues, they introduce trade-offs such as increased sample size and potential redundancy. These trade-offs can hinder model performance and scalability, necessitating the adoption of complementary strategies to optimize feature selection and enhance predictive accuracy.
+
+
+
+
+<p>
+<u><i> Significant Predictor Testing: </i> </u>
+
+The significant predictor test plays a crucial role in identifying the most informative features for predicting SQL injection attacks (SQLIA). By evaluating attribute correlation, this method determines the significance of each feature in contributing to the detection of malicious queries. The Mann-Whitney test is commonly employed to assess the correlation between feature elements and SQLIA proneness. In this process, each query's feature serves as an independent variable, while SQLIA proneness acts as the dependent variable. By quantifying the strength of the association between features and the target variable, the significant predictor test helps prioritize the most relevant features for model training and inference.
+
+<p>
+<u><i> Principal Component Analysis (PCA): </i> </u>
+PCA is a dimensionality reduction technique that seeks to capture the underlying structure of high-dimensional data while minimizing information loss. In the context of feature selection, PCA aids in identifying the most influential features by analyzing their variance and covariance relationships. By retrieving principal components and eigenvalues of covariance for each feature set and its instances, PCA identifies the primary axes of variation within the data. Instances with distances lower than 0.5 from the average principal component are retained, as they are hypothesized to have a higher association with SQLIA prediction. 
+Conversely, instances with higher distances are dropped to reduce redundancy and enhance model efficiency. By selecting features that capture the most significant sources of variation, PCA helps streamline model training and improve the interpretability of results, contributing to overall model performance and reliability.
+</li>
+        <li>Step 5:<b> Classification: </b> <p>
+
+<p>
+<u><i> Ensemble-based Prediction Models: </i> </u> 
+
+Ensemble methods integrate multiple base classifiers to categorize SQL queries into normal traffic (0) and SQL injection attack (SQLIA) queries (1). By combining the predictions of diverse classifiers, ensemble methods harness complementary perspectives to achieve enhanced accuracy and robustness in classification tasks. This approach mitigates the limitations of individual models and leverages the collective intelligence of multiple classifiers to improve overall predictive performance.
+
+<p>
+<u><i> Independent Evaluation of Query Features: </i> </u> 
+
+In ensemble-based classification, each base classifier independently evaluates query features and assigns a class label based on its analysis. This independent evaluation ensures that diverse viewpoints are considered during the classification process, enriching the ensemble's decision-making process with a variety of perspectives. By allowing each classifier to contribute its unique insights, ensemble methods enable comprehensive feature assessment and enhance the system's ability to capture intricate patterns and relationships within the data.
+
+<p>
+<u><i> Aggregation of Individual Predictions:</i> </u> 
+
+The final prediction for each query is determined through the aggregation of individual predictions generated by all base classifiers. Ensemble methods employ a voting mechanism to select the class label with the majority of votes, thereby consolidating the diverse predictions into a single consensus decision. This aggregation process helps mitigate individual model biases and uncertainties, leading to more reliable and robust predictions.
+
+<p>
+<u><i> Enhanced Predictive Performance:</i> </u> 
+
+Ensemble learning techniques significantly enhance predictive performance, robustness, and generalization ability compared to standalone classifier-based approaches. By leveraging the collective intelligence of multiple classifiers, ensemble methods capitalize on the strengths of diverse models while mitigating their weaknesses. This results in more accurate and reliable predictions, even in the presence of noisy or ambiguous data, ultimately improving the system's overall performance and effectiveness.
+
+
+<p>
+<u><i> Utilized Machine Learning Models:</i> </u>
+
+The project employs a diverse range of machine learning models, including 
+<ul>
+<li>Naïve Bayes Classifiers (Gaussian, Multinomial, Bernoulli),</li> 
+<li>Support Vector Machine (SVM), </li>
+<li>Decision Tree (DT), </li>
+<li>Random Forest, </li>
+<li>AdaBoost, and </li>
+<li>Various types of Neural Networks (CNN, RNN, ANN).</li><p> 
+Each model offers unique strengths and capabilities, allowing for comprehensive exploration of classification techniques and ensuring coverage of a wide range of potential solutions. By leveraging a diverse ensemble of models, the project aims to maximize classification accuracy and robustness while accommodating the diverse characteristics of SQL queries in real-world scenarios.
+</ul>
+ </li>
+ <li>Step 6:<b> Building Ensemble Model:</b> <p>
+  <p>
+<u><i> Employing Ensemble Learning:</i> </u>
+
+Ensemble learning plays a pivotal role in enhancing the predictive performance of our model. After obtaining classified output from each base classifier, we employ ensemble learning using the maximum voting ensemble method. This approach aggregates predictions from multiple models, harnessing the collective intelligence of diverse classifiers to enhance classification accuracy and reliability. By integrating insights and perspectives from different models, ensemble learning significantly improves the overall predictive performance of the system, making it more robust and dependable in detecting SQL injection attacks.
+
+<p>
+<u><i> Utilizing Labels from Base Classifiers:</i> </u>
+
+A key aspect of our approach is leveraging the labels assigned by different base classifiers to each query. By combining these labels, SQL queries with five or more "1s" are classified as SQL injection attacks (SQLIA), while those with five "0s" are labeled as normal traffic. This ensures robust classification outcomes and enables the model to effectively capture and interpret the nuances of SQL queries, leading to accurate and reliable predictions.
+
+<p>
+<u><i> Enhanced Reliability and Generalizability:</i> </u>
+
+Ensemble learning enhances the reliability and generalizability of our model compared to traditional standalone classifier-based predictions. By leveraging diverse perspectives and insights from multiple models, ensemble learning mitigates the limitations of individual classifiers and improves overall performance. This results in more robust and dependable predictions, essential for ensuring the security and integrity of IoT databases against SQL injection attacks.
+
+<p>
+<u><i> Simulation Results and Inferences:</i> </u>
+
+Detailed simulation results and associated inferences provide valuable insights into the effectiveness of our ensemble model. Through rigorous evaluation and comparison with existing approaches, we demonstrate the superior performance of our model in accurately detecting SQL injection attacks. These results offer valuable guidance for implementing effective security measures in IoT environments and highlight the significance of ensemble learning in enhancing predictive capabilities for cybersecurity applications.
+
+ </li>
+      </ul>
+      <br>
+      <h2> Query Evaluation </h2><p>
+        Following are the steps followed:
+      <ol> 
+        <li> <b><u> Taking a query: </u></b><p>
+        Accepting a query from the user for accurate and reliable analysis of SQL queries in IoT databases. In the realm of IoT databases, SQL queries play a pivotal role in extracting actionable insights from the vast amounts of data generated by interconnected devices. These queries are tailored to the specific needs of IoT applications, which often involve real-time monitoring, analysis, and decision-making. SQL queries in IoT databases typically involve retrieving sensor data, monitoring device status, analyzing trends, and triggering automated actions based on predefined conditions.  </li>
+        <li><b><u> Tokenizing: </u></b><p>
+          Query statements undergo tokenization, a fundamental process in natural language processing. Tokenization involves breaking down each query statement into individual tokens, typically words or subwords, using suitable methodologies. This process is essential for transforming raw text data into manageable units for analysis. We employ sophisticated tokenization techniques to handle the complexity and variability of SQL queries, ensuring that each token accurately represents a component of the query's syntax and semantics. Through effective tokenization, we prepare the data for feature extraction and subsequent modeling, enabling our system to understand and analyze SQL queries effectively.
+          <li><b><u> Normalizing: </u></b><p>
+Normalization of SQL queries is a fundamental practice aimed at enhancing database efficiency and ensuring data integrity. It involves structuring queries in alignment with normalization principles. This process entails designing database schemas to minimize redundancy and dependency, thus reducing the risk of data anomalies and improving query performance. By organizing data tables and establishing appropriate relationships between entities, normalization optimizes data storage, retrieval, and manipulation, laying a solid foundation for effective management and analysis of IoT data.
+          </li>
+          <li><b><u> Prediction with models: </u></b><p>
+            Ensemble learning techniques significantly enhance predictive performance, robustness, and generalization ability compared to standalone classifier-based approaches. By leveraging the collective intelligence of multiple classifiers, ensemble methods capitalize on the strengths of diverse models while mitigating their weaknesses. This results in more accurate and reliable predictions, even in the presence of noisy or ambiguous data, ultimately improving the system's overall performance and effectiveness.
+          The project employs a diverse range of machine learning models, including Naïve Bayes Classifiers (Gaussian,Multinomial, Bernoulli), Support Vector Machine (SVM), Decision Tree (DT), Random Forest, AdaBoost, and Various types of Neural Networks (CNN, RNN, ANN). Each model offers unique strengths and capabilities, allowing for comprehensive exploration of classification techniques and ensuring coverage of a wide range of potential solutions. By leveraging a diverse ensemble of models, the project aims to maximize classification accuracy and robustness while accommodating the diverse characteristics of SQL queries in real-world scenarios.
+</li>
+<li><b><u> Generating ensemble result: </u></b><p>
+A key aspect of our approach is leveraging the labels assigned by different base classifiers to each query. By combining these labels, SQL queries with five or more "1s" are classified as SQL injection attacks (SQLIA), while those with five "0s" are labeled as normal traffic. This ensures robust classification outcomes and enables the model to effectively capture and interpret the nuances of SQL queries, leading to accurate and reliable predictions.Detailed simulation results and associated inferences provide valuable insights into the effectiveness of our ensemble model. Through rigorous evaluation and comparison with existing approaches, we demonstrate the superior performance of our model in accurately detecting SQL injection attacks. These results offer valuable guidance for implementing effective security measures in IoT environments and highlight the significance of ensemble learning in enhancing predictive capabilities for cybersecurity applications.
+          </li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

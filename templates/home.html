@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='basic.css') }}">
+  <link rel="stylesheet" href="file:///Users/yashvasukar/Desktop/Project/static/basic.css">
+  <link rel="stylesheet" href="{{ url_for('static', path='home.css') }}">
+  <link rel="stylesheet" href="file:///Users/yashvasukar/Desktop/Project/static/home.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <a href="{{ url_for('read_root') }}">Home</a>
+      <a href="information.html">Information</a>
+      <a href="datasets.html">Data Sets</a>
+      <a href="procedure.html">Procedure</a>
+    </div>
+    <div class="home-content">
+      <h1>Welcome to our Website!</h1>
+      <form action="{{ url_for('submit_input') }}", method="post">
+        <input name="query_input" type="text" class="input-box" placeholder="Insert your query">
+        <button type="reset" class="button">Reset</button>
+        <button type="submit" class="button">Submit</button>
+      </form>
+      <div class="model-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Serial Number</th>
+              <th>Model Name</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Gaussian Naïve Bayes Classifier</td>
+              <td>{{ naive_bayes_res }}</td> <!-- whatever keyword generated after the output if processed-->
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Multinomial Naïve Bayes Classifier</td>
+              <td>{{ mnb_res}}</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Bernoulli Naïve Bayes Classifier</td>
+              <td>{{bnb_res}}</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Support Vector Machine (SVM)</td>
+              <td>{{svm_res}}</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Decision Tree (DT)</td>
+              <td>{{dt_res}}</td>
+            </tr>
+          
+            <tr>
+              <td>6</td>
+              <td>Random Forest</td>
+              <td>{{rt_res}}</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>AdaBoost</td>
+              <td>{{ab_res}}</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>CNN</td>
+              <td>{{cnn_res}}</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>RNN</td>
+              <td>{{rnn_res}}</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>ANN</td>
+              <td>{{ann_res}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

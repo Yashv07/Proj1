@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='basic.css') }}">
+  <link rel="stylesheet" href="file:///Users/yashvasukar/Desktop/Project/static/basic.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="information.html">Information</a>
+      <a href="datasets.html">Data Sets</a>
+      <a href="procedure.html">Procedure</a>
+    </div>
+    <div class="procedure-content">
+      <h1>Information</h1>
+      <p>This project employs a diverse range of machine learning models, including </p>
+      <b>1. Gaussian Naïve Bayes Classifier: </b><p>
+Gaussian Naïve Bayes is a variant of the Naïve Bayes algorithm that assumes the features follow a Gaussian distribution, making it suitable for datasets with continuous attributes. Here's how it works:
+<p>
+Assumption of Feature Independence: The "naïve" assumption of Naïve Bayes is that features are conditionally independent given the class label. Despite its simplicity and the unrealistic nature of this assumption in real-world datasets, Gaussian Naïve Bayes often performs surprisingly well in practice.
+<p>
+Bayesian Probability Framework: Gaussian Naïve Bayes operates on the principles of Bayesian probability, where it calculates the probability of a particular class label given the observed features. It uses Bayes' theorem to update the prior probability of each class with new evidence provided by the observed features.
+<p>
+Handling Continuous Data: Gaussian Naïve Bayes excels in handling continuous data by assuming that the features follow a Gaussian (normal) distribution within each class. It estimates the mean and variance of each feature for each class from the training data and uses this information to calculate the likelihood of observing a particular feature value given a class label.
+<p>
+Classification Process: During classification, Gaussian Naïve Bayes calculates the likelihood of each feature value given the class label using the Gaussian probability density function. It then combines these likelihoods with the prior probabilities of the classes and applies Bayes' theorem to compute the posterior probability of each class given the observed features. The class with the highest posterior probability is assigned as the predicted class label.
+<p>
+<b>Advantages: </b>Gaussian Naïve Bayes is computationally efficient, requires a small amount of training data to estimate parameters, and is less prone to overfitting compared to more complex models. It also handles missing data gracefully by simply ignoring the missing values during parameter estimation.
+<br><br><img src="{{ url_for('static', path='assets/gnb_cf.png') }}" height="400px" width="400px">
+<br><br><br>
+
+<b>2. Multinomial Naïve Bayes Classifier: </b><p>
+
+Multinomial Naïve Bayes is another variant of the Naïve Bayes algorithm, specifically designed for text classification tasks where features represent counts or frequencies of words. Here's how it differs from Gaussian Naïve Bayes:
+<p>
+Suitability for Text Classification: Multinomial Naïve Bayes is particularly effective for text classification tasks, such as spam detection or document categorization, where the input features are typically word counts or term frequencies.
+<p>
+Probability Estimation: Unlike Gaussian Naïve Bayes, which assumes continuous feature distributions, Multinomial Naïve Bayes models the probability of observing each word in the vocabulary given the class label. It calculates the likelihood of a document belonging to a particular class based on the frequencies of words in the document.
+<p>
+Handling Sparse Data: Multinomial Naïve Bayes is well-suited for datasets with sparse features, common in text data, where most feature values are zero (i.e., a word is absent from the document). It estimates the probability of missing features using smoothing techniques like Laplace or Lidstone smoothing.
+<p>
+Classification Process: During classification, Multinomial Naïve Bayes computes the conditional probability of each class given the observed word frequencies in the document. It then combines these probabilities with the prior probabilities of the classes and applies Bayes' theorem to calculate the posterior probabilities. The class with the highest posterior probability is predicted as the class label for the document.
+<p>
+<b>Advantages:</b> Multinomial Naïve Bayes is simple, fast, and well-suited for large-scale text classification tasks. It performs remarkably well in practice, especially when the independence assumption holds reasonably well and the features are informative for the classification task.
+<br><br><img src="{{ url_for('static', path='assets/mnb_cf.png') }}" height="400px" width="400px">
+
+<br><br><br>
+
+<b>3. Bernoulli Naïve Bayes Classifiers: </b><p>
+
+Bernoulli Naïve Bayes is yet another variant of the Naïve Bayes algorithm, suitable for binary feature datasets where features represent binary occurrences (e.g., presence or absence of a word). Here's an overview of its characteristics:
+<p>
+Binary Feature Handling: Bernoulli Naïve Bayes is designed for datasets with binary features, where each feature represents the presence or absence of a particular attribute. It models the probability of observing each feature value (0 or 1) given the class label.
+<p>
+Assumption of Feature Independence: Similar to other Naïve Bayes variants, Bernoulli Naïve Bayes assumes that features are conditionally independent given the class label. It estimates the probabilities of observing each feature value (0 or 1) independently for each class.
+<p>
+Handling Sparse Data: Like Multinomial Naïve Bayes, Bernoulli Naïve Bayes is suitable for datasets with sparse features, common in text or document classification tasks. It estimates the probability of missing features using smoothing techniques to avoid zero probabilities.
+<p>
+Classification Process: During classification, Bernoulli Naïve Bayes computes the conditional probability of each class given the observed binary feature values in the document. It combines these probabilities with the prior probabilities of the classes and applies Bayes' theorem to calculate the posterior probabilities. The class with the highest posterior probability is predicted as the class label for the document.
+<p>
+<b>Advantages:</b> Bernoulli Naïve Bayes is simple, efficient, and well-suited for binary feature datasets, such as text classification tasks where features represent word presence or absence. It performs reliably even with small amounts of training data and is robust to irrelevant features.
+<br><br><img src="{{ url_for('static', path='assets/bnb_cf.png') }}" height="400px" width="400px">
+<br><br><br>
+<b>4. Support Vector Machine (SVM): </b><p>
+
+Support Vector Machine (SVM) is a powerful supervised learning algorithm used for classification and regression tasks. Here's how SVM works:
+<p>
+Maximizing Margin: SVM aims to find the hyperplane that best separates the data points of different classes in the feature space while maximizing the margin, i.e., the distance between the hyperplane and the nearest data points (support vectors) of each class.
+<p>
+Kernel Trick: SVM can handle linearly inseparable data by mapping the input features into a higher-dimensional feature space using a kernel function. This allows SVM to find a hyperplane that effectively separates the data in the transformed space, even if the original data is not linearly separable.
+<p>
+Regularization Parameter: SVM incorporates a regularization parameter (C) to control the trade-off between maximizing the margin and minimizing the classification error. A smaller C value results in a wider margin but may lead to misclassification errors, while a larger C value may prioritize classification accuracy over margin maximization.
+<p>
+Handling Non-Linear Data: SVM is highly effective in handling non-linear data and can learn complex decision boundaries in high-dimensional feature spaces. By using appropriate kernel functions (e.g., polynomial, radial basis function (RBF), sigmoid), SVM can capture intricate relationships in the data.
+<p>
+<b>Advantages: </b>SVM is versatile, robust, and effective for high-dimensional data classification. It can handle large feature spaces and is less prone to overfitting, making it suitable for a wide range of classification tasks, including text categorization, image recognition, and bioinformatics.
+<br><br><img src="{{ url_for('static', path='assets/svm_cf.png') }}" height="400px" width="400px">
+
+<br><br><br>
+<b>5. Decision Tree (DT): </b><p>
+
+Decision Tree is a popular supervised learning algorithm used for classification and regression tasks. Here's how the Decision Tree works:
+<p>
+Hierarchical Decision Making: The decision Tree recursively partitions the feature space into smaller subsets based on the values of input features. Each partition is represented by a tree node, and the final partitions (leaf nodes) contain instances belonging to the same class.
+<p>
+Splitting Criteria: Decision Tree uses various splitting criteria (e.g., Gini impurity, entropy, information gain) to determine the best feature and threshold for partitioning the data at each node. The goal is to maximize the homogeneity of classes within each partition while minimizing impurity or uncertainty.
+<p>
+Interpretability: Decision Trees offer intuitive and interpretable models that mimic human decision-making processes. The resulting tree structure provides insights into the most relevant features and their importance in classifying instances.
+<p>
+Handling Non-Linear Data: Decision Trees can capture complex non-linear relationships between features and target variables by recursively partitioning the feature space. However, they may suffer from overfitting, especially when the tree depth is not properly controlled.
+<p>
+<b>Advantages:</b> Decision Trees are easy to understand, interpret, and visualize, making them suitable for exploratory analysis and decision support systems. They can handle both numerical and categorical data and are robust to outliers and missing values.
+<br><br><img src="{{ url_for('static', path='assets/dt_cf.png') }}" height="400px" width="400px">
+
+<br><br><br>
+<b>6. Random Forest: </b><p>
+
+Random Forest is an ensemble learning method based on Decision Trees, known for its robustness and scalability. Here's how Random Forest works:
+<p>
+Bagging Technique: Random Forest aggregates multiple Decision Trees, each trained on a random subset of the training data (bagging). This introduces diversity among the trees, reducing the risk of overfitting and improving generalization performance.
+<p>
+Feature Randomization: Random Forest further enhances diversity by randomly selecting a subset of features at each split in the Decision Trees. This ensures that different trees in the ensemble focus on different subsets of features, capturing complementary aspects of the data.
+<p>
+Voting Mechanism: During classification, each Decision Tree in the Random Forest independently predicts the class label for a given instance. The final prediction is determined by aggregating the individual predictions through a majority voting mechanism, where the class with the most votes is selected as the final prediction.
+<p>
+Handling High-Dimensional Data: Random Forest is well-suited for high-dimensional data and can handle datasets with a large number of features. It is robust to noisy data, outliers, and missing values, making it a popular choice for various classification tasks.
+<p>
+<b>Advantages:</b> Random Forest offers high predictive accuracy, robustness to overfitting, and scalability to large datasets. It is less sensitive to hyperparameters compared to individual Decision Trees and performs well across different types of datasets without extensive tuning.
+<br><br><img src="{{ url_for('static', path='assets/rf_cf.png') }}" height="400px" width="400px">
+
+<br><br><br>
+<b>7. Logistic regression: </b><p>
+
+Logistic regression is a type of regression analysis used for predicting the outcome of a categorical dependent variable based on one or more predictor variables. It's commonly used for binary classification problems, where the target variable has only two possible outcomes.
+<p>
+Sigmoid Function: In logistic regression, the output of the model is passed through a sigmoid function (also known as the logistic function). This function maps any real-valued number into a value between 0 and 1.
+<p>
+Model Training: During the training phase, the model learns the coefficients (weights) of the predictor variables by optimizing a cost function. The most common cost function used in logistic regression is the cross-entropy loss function.
+<p>
+Prediction: Once the model is trained, it can be used to predict the probability that a given input belongs to a particular category. If the predicted probability is greater than a chosen threshold (usually 0.5), the input is classified into one category; otherwise, it's classified into the other category..
+<p>
+<b>Advantages: </b>Logistic regression has several advantages, including simplicity, ease of interpretation, and low computational cost. However, it's limited to linear decision boundaries, so it may not perform well with complex data distributions. Additionally, it assumes that the relationship between the predictor variables and the log-odds of the outcome is linear, which may not always hold true in practice.
+<br><br><img src="{{ url_for('static', path='assets/log_cf.png') }}" height="400px" width="400px">
+<br><br><br>
+<i>-- This project also uses several <b>Neural Network models</b>. Neural Networks are a class of machine learning models inspired by the structure and function of the human brain. Each of these neural network architectures has its unique characteristics and applications, making them suitable for different types of data and tasks. Through deep learning techniques and optimization algorithms, neural networks can learn complex patterns and representations from large-scale datasets, achieving state-of-the-art performance in various domains such as image recognition, natural language understanding, and reinforcement learning. Here's an overview of different types of Neural Networks: </i>
+<p>
+  <br>
+<b>8. Convolutional Neural Networks (CNN): </b><p>
+
+CNNs are primarily used for image recognition and computer vision tasks. They consist of multiple layers of convolutional and pooling operations, designed to automatically learn spatial hierarchies of features from input images.
+<p>
+  <b> Advantages: </b>Convolutional Neural Networks (CNNs) excel in image processing tasks due to their ability to automatically extract hierarchical features from raw data. Unlike traditional neural networks, CNNs preserve spatial relationships within images by using convolutional layers, which apply filters across the input. This enables them to capture patterns at different scales and orientations, making them highly effective for tasks such as image recognition, object detection, and classification. Additionally, CNNs employ techniques like pooling to reduce dimensionality while retaining important information, contributing to their efficiency in handling large-scale image datasets.
+<br><br><img src="{{ url_for('static', path='assets/cnf_cf.png') }}" height="400px" width="400px">
+<br><br><br>
+<b>9. Recurrent Neural Networks (RNN): </b><p>
+
+ RNNs are specialized for sequential data processing tasks, such as natural language processing and time series prediction. They contain recurrent connections that allow them to maintain internal state information and capture temporal dependencies in the input data.
+
+<p>
+  <b> Advantages: </b>Recurrent Neural Networks (RNNs) offer unique advantages in processing sequential data due to their ability to maintain a memory of previous inputs. This memory enables RNNs to capture temporal dependencies within sequences, making them particularly effective in tasks such as natural language processing, speech recognition, and time series prediction. Additionally, RNNs can handle input sequences of varying lengths, providing flexibility in data processing. Despite challenges like vanishing gradients, RNNs remain a powerful tool for modeling sequential data and have seen widespread application across various domains.
+<br><br><img src="{{ url_for('static', path='assets/rnn_cf.png') }}" height="400px" width="400px">
+
+
+<br><br><br>
+<b>10. Artificial Neural Networks (ANN): </b><p>
+
+ ANN, also known as feedforward neural networks, are the foundational building blocks of deep learning. They consist of multiple layers of interconnected neurons, with each neuron performing a weighted sum of inputs followed by an activation function. ANN can be applied to various supervised and unsupervised learning tasks, including classification, regression, and clustering.
+
+<p>
+  <b> Advantages: </b>Artificial Neural Networks (ANNs) serve as versatile tools for solving complex problems in various domains, including image recognition, natural language processing, and predictive analytics. ANNs consist of interconnected layers of artificial neurons that process input data through a series of weighted connections. One of the primary advantages of ANNs is their ability to learn and adapt from data, making them capable of capturing intricate patterns and relationships. Moreover, ANNs can generalize well to unseen data, allowing them to make accurate predictions or classifications on new instances. With advancements in deep learning, architectures like deep neural networks have further extended the capabilities of ANNs, enabling them to tackle increasingly sophisticated tasks with remarkable accuracy and efficiency.
+<br><br><img src="{{ url_for('static', path='assets/ann_cf.png') }}" height="400px" width="400px">
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
