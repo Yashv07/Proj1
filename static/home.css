@@ -1,0 +1,55 @@
+/* CSS specific to home page */
+
+.home-content {
+  background-color: #E7E7DE;
+  padding: 20px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #008891;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #008891;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #00587A;
+}
+
+.model-table {
+  margin-top: 20px;
+}
+
+.model-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.model-table th, .model-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #008891;
+}
+
+.model-table th {
+  background-color: #00587A;
+  color: #E7E7DE;
+}
+
+.model-table tbody tr:nth-child(even) {
+  background-color: #E7E7DE;
+}
+
+.model-table tbody tr:nth-child(odd) {
+  background-color: #D3D3D3;
+}

@@ -1,0 +1,32 @@
+/* Basic CSS for common elements across all pages */
+
+body {
+    font-family: Lato, sans-serif;
+    background-color: #E7E7DE; /* Background color for all pages */
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 2%;
+  }
+  
+  .navbar {
+    background-color: #0F3057; /* Navigation bar background color */
+    overflow: hidden;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #E7E7DE; /* Navigation bar font color */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .navbar a:hover {
+    background-color: #008891; /* Navigation bar hover background color */
+    color: #fff;
+  }
+  

@@ -1,0 +1,35 @@
+/* CSS specific to datasets page */
+
+.datasets-content {
+    background-color: #E7E7DE;
+    padding: 20px;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th, .table-container td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #008891;
+  }
+  
+  .table-container th {
+    background-color: #00587A;
+    color: #E7E7DE;
+  }
+  
+  .table-container tbody tr:nth-child(even) {
+    background-color: #E7E7DE;
+  }
+  
+  .table-container tbody tr:nth-child(odd) {
+    background-color: #D3D3D3;
+  }
+  
