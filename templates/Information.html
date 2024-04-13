@@ -31,7 +31,16 @@ Classification Process: During classification, Gaussian Naïve Bayes calculates 
 <p>
 <b>Advantages: </b>Gaussian Naïve Bayes is computationally efficient, requires a small amount of training data to estimate parameters, and is less prone to overfitting compared to more complex models. It also handles missing data gracefully by simply ignoring the missing values during parameter estimation.
 <br><br><img src="{{ url_for('static', path='assets/gnb_cf.png') }}" height="400px" width="400px">
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9890003235198964 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      0.99      0.99      3912</pre>
+          <pre class="tab1"> 1       0.99      0.98      0.98      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       0.99      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 
 <b>2. Multinomial Naïve Bayes Classifier: </b><p>
 
@@ -47,8 +56,16 @@ Classification Process: During classification, Multinomial Naïve Bayes computes
 <p>
 <b>Advantages:</b> Multinomial Naïve Bayes is simple, fast, and well-suited for large-scale text classification tasks. It performs remarkably well in practice, especially when the independence assumption holds reasonably well and the features are informative for the classification task.
 <br><br><img src="{{ url_for('static', path='assets/mnb_cf.png') }}" height="400px" width="400px">
-
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.982368165642187 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.98      0.99      0.99      3912</pre>
+          <pre class="tab1"> 1       0.98      0.97      0.98      2270</pre>
+  <pre class="tab1">    accuracy                           0.98      6182
+   macro avg       0.98      0.98      0.98      6182
+weighted avg       0.98      0.98      0.98      6182</pre>
+<br><br>
 
 <b>3. Bernoulli Naïve Bayes Classifiers: </b><p>
 
@@ -64,7 +81,16 @@ Classification Process: During classification, Bernoulli Naïve Bayes computes t
 <p>
 <b>Advantages:</b> Bernoulli Naïve Bayes is simple, efficient, and well-suited for binary feature datasets, such as text classification tasks where features represent word presence or absence. It performs reliably even with small amounts of training data and is robust to irrelevant features.
 <br><br><img src="{{ url_for('static', path='assets/bnb_cf.png') }}" height="400px" width="400px">
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9792947266256875 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      0.98      0.98      3912</pre>
+          <pre class="tab1"> 1       0.96      0.98      0.97      2270</pre>
+  <pre class="tab1">    accuracy                           0.98      6182
+   macro avg       0.98      0.98      0.98      6182
+weighted avg       0.98      0.98      0.98      6182</pre>
+<br><br>
 <b>4. Support Vector Machine (SVM): </b><p>
 
 Support Vector Machine (SVM) is a powerful supervised learning algorithm used for classification and regression tasks. Here's how SVM works:
@@ -79,8 +105,16 @@ Handling Non-Linear Data: SVM is highly effective in handling non-linear data an
 <p>
 <b>Advantages: </b>SVM is versatile, robust, and effective for high-dimensional data classification. It can handle large feature spaces and is less prone to overfitting, making it suitable for a wide range of classification tasks, including text categorization, image recognition, and bioinformatics.
 <br><br><img src="{{ url_for('static', path='assets/svm_cf.png') }}" height="400px" width="400px">
-
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9945001617599483 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      1.00      3912</pre>
+          <pre class="tab1"> 1       1.00      0.99      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       1.00      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 <b>5. Decision Tree (DT): </b><p>
 
 Decision Tree is a popular supervised learning algorithm used for classification and regression tasks. Here's how the Decision Tree works:
@@ -95,8 +129,16 @@ Handling Non-Linear Data: Decision Trees can capture complex non-linear relation
 <p>
 <b>Advantages:</b> Decision Trees are easy to understand, interpret, and visualize, making them suitable for exploratory analysis and decision support systems. They can handle both numerical and categorical data and are robust to outliers and missing values.
 <br><br><img src="{{ url_for('static', path='assets/dt_cf.png') }}" height="400px" width="400px">
-
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9943384018117114 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      1.00      3912</pre>
+          <pre class="tab1"> 1       0.99      0.99      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       0.99      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 <b>6. Random Forest: </b><p>
 
 Random Forest is an ensemble learning method based on Decision Trees, known for its robustness and scalability. Here's how Random Forest works:
@@ -111,8 +153,16 @@ Handling High-Dimensional Data: Random Forest is well-suited for high-dimensiona
 <p>
 <b>Advantages:</b> Random Forest offers high predictive accuracy, robustness to overfitting, and scalability to large datasets. It is less sensitive to hyperparameters compared to individual Decision Trees and performs well across different types of datasets without extensive tuning.
 <br><br><img src="{{ url_for('static', path='assets/rf_cf.png') }}" height="400px" width="400px">
-
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9945001617599483 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      1.00      3912</pre>
+          <pre class="tab1"> 1       0.99      0.99      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       0.99      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 <b>7. Logistic regression: </b><p>
 
 Logistic regression is a type of regression analysis used for predicting the outcome of a categorical dependent variable based on one or more predictor variables. It's commonly used for binary classification problems, where the target variable has only two possible outcomes.
@@ -125,7 +175,16 @@ Prediction: Once the model is trained, it can be used to predict the probability
 <p>
 <b>Advantages: </b>Logistic regression has several advantages, including simplicity, ease of interpretation, and low computational cost. However, it's limited to linear decision boundaries, so it may not perform well with complex data distributions. Additionally, it assumes that the relationship between the predictor variables and the log-odds of the outcome is linear, which may not always hold true in practice.
 <br><br><img src="{{ url_for('static', path='assets/log_cf.png') }}" height="400px" width="400px">
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9941766418634747 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      1.00      3912</pre>
+          <pre class="tab1"> 1       1.00      0.99      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       1.00      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 <i>-- This project also uses several <b>Neural Network models</b>. Neural Networks are a class of machine learning models inspired by the structure and function of the human brain. Each of these neural network architectures has its unique characteristics and applications, making them suitable for different types of data and tasks. Through deep learning techniques and optimization algorithms, neural networks can learn complex patterns and representations from large-scale datasets, achieving state-of-the-art performance in various domains such as image recognition, natural language understanding, and reinforcement learning. Here's an overview of different types of Neural Networks: </i>
 <p>
   <br>
@@ -135,7 +194,16 @@ CNNs are primarily used for image recognition and computer vision tasks. They co
 <p>
   <b> Advantages: </b>Convolutional Neural Networks (CNNs) excel in image processing tasks due to their ability to automatically extract hierarchical features from raw data. Unlike traditional neural networks, CNNs preserve spatial relationships within images by using convolutional layers, which apply filters across the input. This enables them to capture patterns at different scales and orientations, making them highly effective for tasks such as image recognition, object detection, and classification. Additionally, CNNs employ techniques like pooling to reduce dimensionality while retaining important information, contributing to their efficiency in handling large-scale image datasets.
 <br><br><img src="{{ url_for('static', path='assets/cnn_cf.png') }}" height="400px" width="400px">
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9961177612423164 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      1.00      3912</pre>
+          <pre class="tab1"> 1       1.00      0.99      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           1.00      6182
+   macro avg       1.00      0.99      1.00      6182
+weighted avg       1.00      1.00      1.00      6182</pre>
+<br><br>
 <b>9. Recurrent Neural Networks (RNN): </b><p>
 
  RNNs are specialized for sequential data processing tasks, such as natural language processing and time series prediction. They contain recurrent connections that allow them to maintain internal state information and capture temporal dependencies in the input data.
@@ -143,9 +211,16 @@ CNNs are primarily used for image recognition and computer vision tasks. They co
 <p>
   <b> Advantages: </b>Recurrent Neural Networks (RNNs) offer unique advantages in processing sequential data due to their ability to maintain a memory of previous inputs. This memory enables RNNs to capture temporal dependencies within sequences, making them particularly effective in tasks such as natural language processing, speech recognition, and time series prediction. Additionally, RNNs can handle input sequences of varying lengths, providing flexibility in data processing. Despite challenges like vanishing gradients, RNNs remain a powerful tool for modeling sequential data and have seen widespread application across various domains.
 <br><br><img src="{{ url_for('static', path='assets/rnn_cf.png') }}" height="400px" width="400px">
-
-
-<br><br><br>
+<br>
+<pre class="tab1">Accuracy: 0.9860886444516338 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      0.99      0.99      3912</pre>
+          <pre class="tab1"> 1       0.98      0.98      0.98      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       0.98      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+<br><br>
 <b>10. Artificial Neural Networks (ANN): </b><p>
 
  ANN, also known as feedforward neural networks, are the foundational building blocks of deep learning. They consist of multiple layers of interconnected neurons, with each neuron performing a weighted sum of inputs followed by an activation function. ANN can be applied to various supervised and unsupervised learning tasks, including classification, regression, and clustering.
@@ -153,7 +228,16 @@ CNNs are primarily used for image recognition and computer vision tasks. They co
 <p>
   <b> Advantages: </b>Artificial Neural Networks (ANNs) serve as versatile tools for solving complex problems in various domains, including image recognition, natural language processing, and predictive analytics. ANNs consist of interconnected layers of artificial neurons that process input data through a series of weighted connections. One of the primary advantages of ANNs is their ability to learn and adapt from data, making them capable of capturing intricate patterns and relationships. Moreover, ANNs can generalize well to unseen data, allowing them to make accurate predictions or classifications on new instances. With advancements in deep learning, architectures like deep neural networks have further extended the capabilities of ANNs, enabling them to tackle increasingly sophisticated tasks with remarkable accuracy and efficiency.
 <br><br><img src="{{ url_for('static', path='assets/ann_cf.png') }}" height="400px" width="400px">
-      </ol>
+     <br>
+<pre class="tab1">Accuracy: 0.9933678421222906 <br>
+Classification Report:<br></pre>
+           <pre class="tab1">     precision    recall    f1-score   support</pre>
+          <pre class="tab1"> 0       0.99      1.00      0.99      3912</pre>
+          <pre class="tab1"> 1       1.00      0.98      0.99      2270</pre>
+  <pre class="tab1">    accuracy                           0.99      6182
+   macro avg       0.98      0.99      0.99      6182
+weighted avg       0.99      0.99      0.99      6182</pre>
+    </ol>
     </div>
   </div>
 </body>
