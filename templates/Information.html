@@ -10,10 +10,10 @@
 <body>
   <div class="container">
     <div class="navbar">
-      <a href="home.html">Home</a>
-      <a href="information.html">Information</a>
-      <a href="datasets.html">Data Sets</a>
-      <a href="procedure.html">Procedure</a>
+      <a href="{{ url_for('read_root') }}">Home</a>
+      <a href="{{ url_for('read_root') }}information.html">Information</a>
+      <a href="{{ url_for('read_root') }}datasets.html">Data Sets</a>
+      <a href="{{ url_for('read_root') }}procedure.html">Procedure</a>
     </div>
     <div class="procedure-content">
       <h1>Information</h1>
@@ -134,7 +134,7 @@ Prediction: Once the model is trained, it can be used to predict the probability
 CNNs are primarily used for image recognition and computer vision tasks. They consist of multiple layers of convolutional and pooling operations, designed to automatically learn spatial hierarchies of features from input images.
 <p>
   <b> Advantages: </b>Convolutional Neural Networks (CNNs) excel in image processing tasks due to their ability to automatically extract hierarchical features from raw data. Unlike traditional neural networks, CNNs preserve spatial relationships within images by using convolutional layers, which apply filters across the input. This enables them to capture patterns at different scales and orientations, making them highly effective for tasks such as image recognition, object detection, and classification. Additionally, CNNs employ techniques like pooling to reduce dimensionality while retaining important information, contributing to their efficiency in handling large-scale image datasets.
-<br><br><img src="{{ url_for('static', path='assets/cnf_cf.png') }}" height="400px" width="400px">
+<br><br><img src="{{ url_for('static', path='assets/cnn_cf.png') }}" height="400px" width="400px">
 <br><br><br>
 <b>9. Recurrent Neural Networks (RNN): </b><p>
 
