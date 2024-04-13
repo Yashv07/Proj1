@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def read_root(request: Request):
-    return templates.TemplateResponse(request=request, name="home.html", context={})
+    return templates.TemplateResponse(request=request, name="home.html", context={naive_bayes_res,mnb_res,bnb_res,svm_res,dt_res,rt_res,ab_res,cnn_res,rnn_res,ann_res})
 
 @app.get("/information.html", response_class=HTMLResponse)
 def static(request: Request):
