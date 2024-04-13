@@ -10,10 +10,10 @@
 <body>
   <div class="container">
     <div class="navbar">
-      <a href="home.html">Home</a>
-      <a href="information.html">Information</a>
-      <a href="datasets.html">Data Sets</a>
-      <a href="procedure.html">Procedure</a>
+      <a href="{{ url_for('read_root') }}">Home</a>
+      <a href="{{ url_for('read_root') }}information.html">Information</a>
+      <a href="{{ url_for('read_root') }}datasets.html">Data Sets</a>
+      <a href="{{ url_for('read_root') }}procedure.html">Procedure</a>
     </div>
     <div class="procedure-content">
       <h1>Procedure</h1>
